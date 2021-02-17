@@ -32,7 +32,6 @@ RUN apt-get update \
   && pip install "poetry==$POETRY_VERSION" && poetry --version
 
 # set work directory
-RUN mkdir /code
 WORKDIR /code
 COPY pyproject.toml poetry.lock /code/
 
