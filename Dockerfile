@@ -40,6 +40,7 @@ RUN poetry install
 # copy project
 COPY . .
 
-# set user without root access
-RUN useradd user -s /bin/bash
+# set user without root access. Is there a better way?
+RUN useradd user -s /bin/bash && chown -R user /code
+# RUN useradd -d /code -m -s /bin/bash user
 USER user
