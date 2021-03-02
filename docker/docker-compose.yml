@@ -17,6 +17,8 @@ services:
       - "3000:3000"
     env_file:
       - ./.env
+    volumes:
+      - ${PROJECT_PATH}:/code
     depends_on:
       - db
 
